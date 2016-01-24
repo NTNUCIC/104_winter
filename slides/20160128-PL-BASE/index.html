@@ -42,11 +42,206 @@
 		<div class="reveal">
 			<div class="slides">
 
-			<section>
-				<h1 style="margin-top:100px">程式語言基礎</h1>
-					<h4>林品儒</h4>
-					<h4>2016/1/28</h4>
-			</section>
+				<section>
+					<h1 style="margin-top:100px">程式語言基礎</h1>
+						<h4>林品儒</h4>
+						<h4>2016/1/28</h4>
+				</section>
+				
+				<section>
+					<h2>社團介紹</h2>
+					<p class="fragment">NTNUCIC</p>
+					<p class="fragment">台師大資訊研究社</p>
+					<p class="fragment">對資訊相關有興趣的人都來~~</p>
+				</section>
+				
+				<section>
+					<h2>自我介紹</h2>
+					<p class="fragment">林品儒</p>
+					<p class="fragment">www.github.com/aigecko</p>
+					<p class="fragment">師大貓耳控</p>
+				</section>
+				
+				<section>
+					<h2>程式是啥米</h2>
+					<p class="fragment">向電腦發出指令使其服從操作</p>
+					<p class="fragment">給電腦看?</p>
+					<p class="fragment">給人類看?</p>
+				</section>
+
+				<section>
+					<h2>程式執行</h2>
+					<p class="fragment">編輯:Edit&nbsp;-&gt;&nbsp;原始碼</p>
+					<p class="fragment">編譯:Compile&nbsp;-&gt;&nbsp;目的檔</p>
+					<p class="fragment">組譯:Assemble&nbsp;-&gt;&nbsp;機械碼</p>
+					<p class="fragment">連結:Link&nbsp;-&gt;&nbsp;執行檔</p>
+					<p class="fragment">執行:Run</p>
+				</section>
+				
+				<section>
+					<h2>程式語言</h2>
+					<p class="fragment">高階語言</p>
+					<p class="fragment">組合語言</p>
+					<p class="fragment">機械語言</p>
+				</section>
+				
+				<section>
+					<h2>高階語言</h2>
+					<ul class="fragment" style="list-style-type: none;font-family: 'consolas','Ubuntu Mono';">
+						<li>Ruby/&nbsp;Perl/&nbsp;Python</li>
+						<li>JavaScript</li>
+						<li>C#/&nbsp;C++/&nbsp;Java</li>
+					</ul>
+					<p class="fragment">方便人類撰寫與開發</p>
+					<p class="fragment">適合人類閱讀</p>
+					<p class="fragment"><del>不適合電腦閱讀</del></p>
+				</section>
+
+				<section>
+					<h2>中階語言</h2>
+					<p class="fragment">C語言</p>
+					<p class="fragment">和電腦的運行關連性較高</p>
+					<p class="fragment">適合電腦閱讀</p>
+					<p class="fragment"><del>不適合人類閱讀</del></p>
+				</section>
+
+				<section>
+					<h2>組合語言/機械語言</h2>
+					<pre style="font-family: 'consolas','Ubuntu Mono'">
+8d 74 26 00          	lea    0x0(%esi,%eiz,1),%esi
+8b 54 24 28          	mov    0x28(%esp),%edx
+89 44 24 04          	mov    %eax,0x4(%esp)
+8b 44 24 20          	mov    0x20(%esp),%eax
+89 54 24 08          	mov    %edx,0x8(%esp)
+89 04 24             	mov    %eax,(%esp)
+e8 38 06 00 00       	call   6b902250 &lt;___mingw_TLScallback&gt;
+b8 01 00 00 00       	mov    $0x1,%eax
+83 c4 1c             	add    $0x1c,%esp
+c2 0c 00             	ret    $0xc
+					</pre>
+					<p class="fragment">換湯不換藥</p>
+				</section>
+
+				<section>
+					<h2>標記語言</h2>
+					<ul class="fragment" style="list-style-type: none">
+						<li>HTML</li>
+						<li>XML</li>
+						<li>CSS</li>
+					</ul>
+					<p class="fragment">毫無反應，只是個標記語言</p>
+				</section>
+				
+				<section>
+					<h2>C++</h2>
+					<p class="fragment">雖然看起來很C但我們還是寫C++</p>
+					<p class="fragment">使用GCC編譯器</p>
+					<p class="fragment">搭配整合開發環境更方便</p>
+				</section>
+				
+				<section>
+					<h2>IDE</h2>
+					<p class="fragment">整合開發環境</p>
+					<p class="fragment">將文字編輯以及編譯除錯的功能整合</p>
+					<p class="fragment">DevC++,VS,Code::Blocks</p>
+					<p class="fragment"><del>和ATA沒有關係</del></p>
+				</section>
+				
+				<section>
+					<h2>C::B</h2>
+					<p class="fragment">Code::Blocks</p>
+					<p class="fragment"><img src="CB.png"></p>
+				</section>
+				
+				<section>
+					<h2>C::B</h2>
+					<p class="fragment">跨平台</p>
+					<p class="fragment">開放原始碼</p>
+					<p class="fragment">功能多</p>
+				</section>
+				
+				<section>
+					<h2>下載連結</h2>
+					<p class="fragment"><a href="http://www.codeblocks.org/downloads/26">http://www.codeblocks.org/downloads/26</a></p>
+					<p class="fragment"><img src="DL.png"></p>
+					<p class="fragment">我都用sudo apt-get install codeblocks</p>
+				</section>
+				
+				<section>
+					<h2>新手安裝指南</h2>
+					<p class="fragment">為了廣大使用Windows的社會大眾</p>
+					<p class="fragment">還是告訴各位安裝的程序</p>
+				</section>
+				
+				<section>
+					<h2>開啟安裝檔</h2>
+					<p class="fragment"><img src="INS_0.png"></p>
+				</section>
+				
+				<section>
+					<h2>同意條款</h2>
+					<p class="fragment"><img src="INS_1.png"></p>
+				</section>
+				
+				<section>
+					<h2>選擇安裝種類</h2>
+					<p class="fragment">建議全部安裝</p>
+					<p class="fragment"><img src="INS_2.png"></p>
+				</section>
+				
+				<section>
+					<h2>選擇安裝路徑</h2>
+					<p class="fragment"><img src="INS_3.png"></p>
+				</section>
+				
+				<section>
+					<h2>放給他跑</h2>
+					<p class="fragment">30秒不到就可以安裝完成</p>
+					<p class="fragment"><img src="INS_4.png"></p>
+				</section>
+				
+				<section>
+					<h2>開啟C::B</h2>
+					<p class="fragment"><img src="INS_5.png"></p>
+				</section>
+				
+				<section>
+					<h2>設定編譯器</h2>
+					<p class="fragment"><img src="INS_6.png"></p>
+				</section>
+				
+				<section>
+					<h2>開啟檔案關連</h2>
+					<p class="fragment"><img src="INS_7.png"></p>
+				</section>
+				
+				<section>
+					<h2>第一個程式</h2>
+					<pre class="fragment" style="width:400px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	printf("hello, world");
+	return 0;
+}</code></pre>
+					<p class="fragment">按下F9後編譯執行</p>
+				</section>
+				
+				<section>
+					<h2>記得要存檔</h2>
+					<p class="fragment">記得副檔名要存成.cpp</p>
+					<p class="fragment"><img src="save.png"></p>
+				</section>
+				
+				<section>
+					<h2>執行結果</h2>
+					<p class="fragment"><img src="result.png"></p>
+				</section>
+				
+				<section>
+					<h2>大家快來踹</h2>
+					<p class="fragment">安裝Code::Blocks</p>
+					<p class="fragment">輸入程式碼</p>
+					<p class="fragment">編譯執行</p>
+				</section>
 			</div>
 		</div>
 		<script src="../lib/js/head.min.js"></script>
