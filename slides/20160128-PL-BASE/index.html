@@ -601,6 +601,55 @@ int main(){
 					</section>
 				</section>
 				
+				<section>
+					<section>
+						<h2>指標</h2>
+						<p class="fragment">在C/C++中深奧難懂的神祕名詞</p>
+						<p class="fragment">代表記憶體的位置</p>
+						<p class="fragment">可以取出變數的記憶體位置</p>
+						<p class="fragment">或是從指定位置取出值</p>
+					</section>
+					
+					<section>
+						<h2>指標宣告</h2>
+						<p class="fragment">變數名稱前面加上星號*</p>
+						<p class="fragment">這樣"該變數"就會是該型別的指標</p>
+					</section>
+					
+					<section>
+						<h2>取址和取值</h2>
+						<p class="fragment">對變數使用&amp;當前綴的話可以取得其指標</p>
+						<p class="fragment">對指標使用*前綴則可以取得該位址放的值</p>
+						<p class="fragment">注意地址和放的東西不一定一樣</p>
+					</section>
+					
+					<section>
+						<h2>練習</h2>
+						<p class="fragment">了解地址和放的值不會一樣</p>
+						<pre class="fragment" style="width:400px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	int a=0x5566;
+	int *p=&amp;a;
+	printf("%X %X %X %X %X",a,p,*p,&amp;a,*(&amp;a));
+	return 0;
+}</code></pre>
+					</section>
+				</section>
+					
+				<section>
+					<section>
+						<h2>陣列</h2>
+						<p class="fragment">要使用陣列需要使用指標進行操作</p>
+						<p class="fragment">宣告陣列要在變數名稱後加上使用[]</p>
+						<p class="fragment">陣列宣告時要指定大小</p>
+					</section>
+					
+					<section>
+						<h2></h2>
+					</section>
+				</section>
+					
+				
 				
 			</div>
 		</div>
