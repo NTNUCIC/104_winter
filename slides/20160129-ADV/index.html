@@ -103,6 +103,26 @@ int main(){
 	printf("%X %X %X %X %X",a,p,*p,&amp;a,*(&amp;a));
 }</code></pre>
 					</section>
+					
+					<section>
+						<h2>使用指標</h2>
+						<p class="fragment">取得指標後可以對該位置的值進行存取</p>
+						<p class="fragment">可以讀也可以寫入</p>
+						<pre class="fragment" style="width:600px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	int n=4850;
+	int *p=&amp;a;
+	*p=7850
+	printf("%X %X %X %X %X",a,p,*p,&amp;a,*(&amp;a));
+}</code></pre>
+					</section>
+					
+					<section>
+						<h2>練習</h2>
+						<p class="fragment">既然可以使用指標存取值</p>
+						<p class="fragment">那就可以將兩個變數的值交換</p>
+						<p class="fragment">提示:宣告變數a,b並宣告指標p,q指派a,b的位址</p>
+					</section>
 				</section>
 					
 				<section>
@@ -112,13 +132,6 @@ int main(){
 						<p class="fragment">宣告陣列要在變數名稱後加上使用[]</p>
 						<p class="fragment">陣列宣告時要指定大小</p>
 						<p class="fragment">可以用{}將其元素初始化</p>
-					</section>
-					
-					<section>
-						<h2>取得型別大小</h2>
-						<p class="fragment">使用sizeof()傳入變數或型別可得知其位元組數</p>
-						<p class="fragment">因為是運算子所以編譯時就知道</p>
-						<p class="fragment">也可以用來看陣列多大</p>
 					</section>
 					
 					<section>
@@ -185,27 +198,6 @@ int main(){
 					</section>
 					
 					<section>
-						<h2>地雷範例</h2>
-						<pre class="fragment" style="width:650px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
-int main(){
-	int n=100,m;
-	m=++n;
-	printf("%d %d\n",n,m);
-	m=n++;
-	printf("%d %d\n",n,m);
-}</code></pre>
-						<p class="fragment">放前面放後面竟然結果會不一樣</p>
-					</section>
-					
-					<section>
-						<h2>再次提醒</h2>
-						<p class="fragment">雖然在此不探討其原理</p>
-						<p class="fragment">但是記得一個指令一個動作</p>
-						<p class="fragment">有遞增遞減就不要指派</p>
-						<p class="fragment"><del>愛護生命遠離debugging</del></p>
-					</section>
-					
-					<section>
 						<h2>指標移動</h2>
 						<p class="fragment">可以用來迭代整個陣列</p>
 						<p class="fragment">記得陣列本身可以轉成該型別指標</p>
@@ -220,12 +212,67 @@ int main(){
 					</section>
 					
 					<section>
-						<h2>最後</h2>
-						<p class="fragment">今天是資訊研究社寒訓的前半段</p>
-						<p class="fragment">前半段的課程稍微複雜</p>
-						<p class="fragment">希望大家看完直播還是再研究一下投影片</p>
-						<p class="fragment">感謝各位的收看</p>
-						<p class="fragment">課程網址：ntnucic.github.io/104_winter</p>
+						<h2>陣列取值</h2>
+						<p class="fragment">使用指標取出指定索引的值</p>
+						<pre class="fragment" style="width:550px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	int arr[]={478,771,775};
+	int *p=arr;
+	printf("%d %d\n",*(arr+0),arr[0]);
+	printf("%d %d\n",*(arr+1),arr[1]);
+	printf("%d %d\n",*(arr+2),arr[2]);
+}</code></pre>
+						<p class="fragment">其實中括號就是幫我們精減語法</p>
+					</section>
+					
+					<section>
+						<h2>練習</h2>
+						<p class="fragment">陣列也可以裝指標</p>
+						<p class="fragment">使用printf列印陣列中的字串<p>
+						<pre class="fragment" style="width:550px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">const char *arr[3]={
+	"coppermine",
+	"thunghbird",
+	"northwood"
+};</code></pre>
+					</section>
+					
+					<section>
+						<h2>常數</h2>
+						<p class="fragment">使用const關鍵字前綴代表常數</p>
+						<p class="fragment">常數不可以被更改</p>
+						<p class="fragment">但是有指標時就要小心了</p>
+					</section>
+					
+					<section>
+						<h2>常數的指標vs指標的常數</h2>
+						<pre class="fragment" style="width:550px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	int a=4004;
+	const int *p;  //指向的值不能改
+	int * const q=&amp;a; //指標本身不能改
+	const int * const r=&amp;a; //都不能改
+}</code></pre>
+					</section
+					
+					<section>
+						<h2>辨識方法</h2>
+						<p class="fragment">看看const在&nbsp;*&nbsp;的哪一邊</p>
+						<p class="fragment">放前面就是常數的指標</p>
+						<p class="fragment">放後面就是指標的常數</p>
+						<p class="fragment">兩個都有就是常數的指標常數</p>
+					</section>
+					
+					<section>
+						<h2>練習</h2>
+						<p class="fragment">補上p和q的宣告讓輸出為8008&nbsp;8008</p>
+						<pre class="fragment" style="width:550px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	int a=8087,b=8008;
+	//宣告不同型態的p和q
+	p=&amp;b;
+	*q=*p;
+	printf("%d %d",*p,a);
+}</code></pre>
 					</section>
 				</section>
 				
