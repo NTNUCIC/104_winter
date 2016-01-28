@@ -528,8 +528,74 @@ int main(){
 						<p class="fragment">輸入數字指定迴圈的執行次數</p>
 						<p class="fragment">輸入字串使讓迴圈執行時可以列印</p>
 					</section>
+					
+					<section>
+						<h2>陣列迭代</h2>
+						<p class="fragment">使用for迴圈操作陣列的每個元素</p>
+						<pre class="fragment" style="width:650px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	int arr[5];
+	for(int i=0;i&lt;sizeof(arr)/sizeof(int);i++){
+		printf("arr[%d] is %d\n",i,arr[i]);
+	}
+}</code></pre>
+					</section>
+					
+					<section>
+						<h2>練習</h2>
+						<p class="fragment">宣告有8個元素的整數陣列</p>
+						<p class="fragment">把陣列中的每個元素變成其索引的平方數</p>
+					</section>
 				</section>
 				
+				<section>
+					<section>
+						<h2>邏輯運算子</h2>
+						<p class="fragment">此運算子可以補足分支指令的不足</p>
+						<p class="fragment">可以同時判斷多個條件</p>
+					</section>
+					
+					<section>
+						<h2>AND</h2>
+						<p class="fragment">使用&nbsp;&amp;&amp;&nbsp;或and將兩個值取AND</p>
+						<p class="fragment">要注意這裡是兩個&amp;</p>
+						<p class="fragment">是對兩個值進行操作而非其中的位元</p>
+						<p class="fragment">兩個值為true才為true</p>
+						<p class="fragment">否則為false</p>
+					</section>
+					
+					<section>
+						<h2>OR</h2>
+						<p class="fragment">使用&nbsp;||&nbsp;或or將兩個值取OR</p>
+						<p class="fragment">一樣要注意是2個|</p>
+						<p class="fragment">兩個值任一為true就為true</p>
+						<p class="fragment">其他就是false</p>
+					</section>
+					
+					<section>
+						<h2>XOR</h2>
+						<p class="fragment">可以用&nbsp;^&nbsp;或xor將兩個值取XOR</p>
+						<p class="fragment">兩值相同則為false</p>
+						<p class="fragment">兩值不同則為true</p>
+					</section>
+					
+					<section>
+						<h2>NOT</h2>
+						<p class="fragment">其實NOT應該歸類於邏輯運算子</p>
+						<p class="fragment">可以用&nbsp;!&nbsp;或not讓結果反向</p>
+						<p class="fragment">false變成true</p>
+						<p class="fragment">true變成false</p>
+					</section>
+				</section>
+				
+				<section>
+					<h2>最後</h2>
+					<p class="fragment">這次是台師大資訊研究社第一次舉辦寒訓</p>
+					<p class="fragment">當然採用直播也是第一次嘗試</p>
+					<p class="fragment">希望可以讓大家對寫程式有初步的認識</p>
+					<p class="fragment">此次寒訓課程就到此結束</p>
+					<p class="fragment">感謝各位的收看及指教</p>
+				</section>
 			</div>
 		</div>
 		<script src="../lib/js/head.min.js"></script>
