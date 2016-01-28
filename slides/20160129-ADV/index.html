@@ -43,7 +43,7 @@
 			<div class="slides">
 
 				<section>
-					<h1 style="margin-top:100px">程式語言基礎</h1>
+					<h1 style="margin-top:100px">程式語言進階</h1>
 						<h4>林品儒</h4>
 						<h4>2016/1/29</h4>
 				</section>
@@ -90,6 +90,14 @@
 						<p class="fragment">對變數使用&amp;當前綴的話可以取得其指標</p>
 						<p class="fragment">對指標使用*前綴則可以取得該位址放的值</p>
 						<p class="fragment">注意地址和放的東西不一定一樣</p>
+					</section>
+					
+					<section>
+						<h2>空指標</h2>
+						<p class="fragment">指標的值為0(NULL)則為空指標</p>
+						<p class="fragment">不可以對空指標取值不然會發生錯誤</p>
+						<p class="fragment">指標初始化時儘量初始化為空指標</p>
+						<p class="fragment"><del>不是不爆&nbsp;時候未到</del></p>
 					</section>
 					
 					<section>
@@ -204,7 +212,7 @@ int main(){
 						<pre class="fragment" style="width:550px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
 int main(){
 	int arr[]={100,200,0};
-	int *p=arr; \\注意這裡直接把arr給p
+	int *p=arr; //注意這裡直接把arr給p
 	printf("%d ",*p);p++;
 	printf("%d ",*p);p++;
 	printf("%d ",*p);p++;
@@ -252,7 +260,7 @@ int main(){
 	int * const q=&amp;a; //指標本身不能改
 	const int * const r=&amp;a; //都不能改
 }</code></pre>
-					</section
+					</section>
 					
 					<section>
 						<h2>辨識方法</h2>
@@ -274,12 +282,35 @@ int main(){
 	printf("%d %d",*p,a);
 }</code></pre>
 					</section>
+					
+					<section>
+						<h2>格式化輸入</h2>
+						<p class="fragment">為什麼輸出很早就講了而沒有講輸入</p>
+						<p class="fragment">因為輸入要有指標才能做到</p>
+						<p class="fragment">scanf可傳入格式以及多個指標</p>
+						<p class="fragment">將輸入的值以指定格式取代指標指的值</p>
+					</section>
+					
+					<section>
+						<h2>格式化字串</h2>
+						<p class="fragment">其他的格式相同,只有以下不同</p>
+						<p class="fragment">"%f"對應單精度浮點數</p>
+						<p class="fragment">"%d"對應雙精度浮點數</p>
+						<p class="fragment">要知道佔用的記憶體有多大才能放好放滿</p>
+					</section>
+					
+					<section>
+						<h2>練習</h2>
+						<p class="fragment">語法參考&nbsp;scanf("%d",&amp;n);</p>
+						<p class="fragment">宣告以下型態的變數並在輸入後輸出其值</p>
+						<p class="fragment">unsigned&nbsp;int,long&nbsp;long&nbsp;int,float及double</p>
+					</section>
 				</section>
 				
 				<section>
 					<section>
 						<h2>比較運算</h2>
-						<p class="fragment">在講解條件判斷前需要先知道比較運算</p>
+						<p class="fragment">在講解分支指令前需要先知道比較運算</p>
 						<p class="fragment">對兩個運算元比較之後得出其真假值</p>
 					</section>
 					
@@ -301,7 +332,7 @@ int main(){
 					
 					<section>
 						<h2>字串比較</h2>
-						<p class="fragment">印入&lt;string.h&gt;</p>
+						<p class="fragment">#include&nbsp;&lt;string.h&gt;</p>
 						<p class="fragment">其中有strcmp可以傳入兩個字串</p>
 						<p class="fragment">字串相等時回傳0</p>
 						<p class="fragment">前字串小於後字串回傳負值</p>
@@ -314,6 +345,123 @@ int main(){
 						<p class="fragment">"i7-6700","i5-6500"</p>
 						<p class="fragment">"p4 631","p4 631"</p>
 						<p class="fragment">"MX440","R4850"</p>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>分支指令</h2>
+						<p class="fragment">使用條件讓程式執行流程改變</p>
+						<p class="fragment">所以才需要講解比較運算</p>
+						<p class="fragment">不同語言的分支指令語法可能略有出入</p>
+					</section>
+					
+					<section>
+						<h2>if</h2>
+						<p class="fragment">最簡單的分支指令</p>
+						<p class="fragment">if(條件){想執行的內容}</p>
+						<p class="fragment">此處的右大括號後方是不需要分號的</p>
+						<p class="fragment">用在只有某種情況才要執行的時候</p>
+					</section>
+					
+					<section>
+						<h2>if實例</h2>
+						<p class="fragment"></p>
+						<pre class="fragment" style="width:550px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	if(3==8){
+		printf("impossible!!");
+	}
+}</code></pre>
+					</section>
+					
+					<section>
+						<h2>if-else</h2>
+						<p class="fragment">二分法的分支指令</p>
+						<p class="fragment">if(條件){想執行的內容}</p>
+						<p class="fragment">else{否則執行這裡}</p>
+						<p class="fragment">條件符合就往if去,不合則往else去</p>
+						<p class="fragment">用在不同狀況有不同處理</p>
+					</section>
+					
+					<section>
+						<h2>if-else實例</h2>
+						<pre class="fragment" style="width:550px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	if('Z'>'B'){
+		printf("Just do it!");
+	}
+	else{
+		printf("Don't do that.");
+	}
+}</code></pre>
+					</section>
+					
+					<section>
+						<h2>if-else&nbsp;if-else</h2>
+						<p class="fragment">多個條件的判斷</p>
+						<p class="fragment">if(條件){想執行的內容}</p>
+						<p class="fragment">else if(條件){某些內容}</p>
+						<p class="fragment">else{不然就執行這裡}</p>
+					</section>
+					
+					<section>
+						<h2>if-else&nbsp;if-else實例</h2>
+						<pre class="fragment" style="width:650px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	unsigned int n;scanf("%ud",&amp;n);
+	if(n&lt;50){printf("You get nothing.");}
+	else if(n&lt;80){printf("You get dirt.");}
+	else if(n&lt;95){printf("You get stone.");}
+	else if(n&lt;100){printf("You get gold");}
+	else{printf("Out of range");}
+}</code></pre>
+					</section>
+					
+					<section>
+						<h2>switch-case</h2>
+						<p class="fragment">上面講的都是不同的判斷是來做分支</p>
+						<p class="fragment">使用switch-case可以只對某變數的值做比較</p>
+						<p class="fragment">因為語法很難描述就直接看實例吧</p>
+					</section>
+					
+					<section>
+						<h2>switch-case實例</h2>
+						<pre class="fragment" style="width:650px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	char c;scanf(" %c",&amp;c);
+	switch(c){
+		case '1':{
+			printf("Taiwan No.1");
+			break;
+		}
+		case '2':
+		case '3':
+			printf("2 or 3");
+			break;
+		case '4':
+			break;
+		default:
+			printf("other");
+	}
+}</code></pre>
+					</section>
+					
+					<section>
+						<h2>練習</h2>
+						<p class="fragment">依照隨機的骰子列印不同的字串</p>
+						<pre class="fragment" style="width:650px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;time.h&gt;
+int main(){
+	srand(time(NULL));
+	int dice=rand()%64;
+	//骰出0~7輸出"AL"
+	//骰出8~15輸出"AX"
+	//骰出16~31輸出"EAX"
+	//骰出32~63輸出"RAX"
+	//其他狀況輸出"QQ"
+}</code></pre>
 					</section>
 				</section>
 				
