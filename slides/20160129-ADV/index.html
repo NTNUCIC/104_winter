@@ -296,6 +296,7 @@ int main(){
 						<p class="fragment">其他的格式相同,只有以下不同</p>
 						<p class="fragment">"%f"對應單精度浮點數</p>
 						<p class="fragment">"%d"對應雙精度浮點數</p>
+						<p class="fragment">"%s"對應字串(記得字串空間要夠大)</p>
 						<p class="fragment">要知道佔用的記憶體有多大才能放好放滿</p>
 					</section>
 					
@@ -462,6 +463,70 @@ int main(){
 	//骰出32~63輸出"RAX"
 	//其他狀況輸出"QQ"
 }</code></pre>
+					</section>
+				</section>
+				
+				<section>
+					<section>
+						<h2>迴圈</h2>
+						<p class="fragment">改變程式執行流程的除了分支還有迴圈</p>
+						<p class="fragment">可以在特定狀況下重複執行程式碼</p>
+						<p class="fragment">有各種不同功能的指令</p>
+					</section>
+					
+					<section>
+						<h2>while</h2>
+						<p class="fragment">最簡單的迴圈</p>
+						<p class="fragment">while(條件){重複部份}</p>
+						<p class="fragment">當條件符合時會執行大括號內的指令</p>
+						<p class="fragment">執行完會再判斷是否符合條件</p>
+					</section>
+					
+					<section>
+						<h2>無限迴圈</h2>
+						<p class="fragment">會一直執行而不會停止</p>
+						<p class="fragment">剛好當成while語法的實例</p>
+						<pre class="fragment" style="width:450px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	while(true){
+		printf(".");
+	}
+}</code></pre>
+						<p class="fragment">可以使用ctrl+c停止程式</p>
+					</section>
+					
+					<section>
+						<h2>練習</h2>
+						<p class="fragment">取得輸入整數取log2的整數部份</p>
+						<p class="fragment">提示:使用除法將輸入的數每次除以2</p>
+						<p class="fragment">提示:記得宣告另外的變數來遞增</p>
+					</section>
+					
+					<section>
+						<h2>for</h2>
+						<p class="fragment">進階版的迴圈但是更常用</p>
+						<p class="fragment">for(初始化;條件;內容結束時執行){內容}</p>
+						<p class="fragment">可以在初始化的地方宣告變數</p>
+						<p class="fragment">在條件的部份撰寫所需條件</p>
+						<p class="fragment">在內容結束時執行的部份遞增變數</p>
+						<p class="fragment">要注意是2個分號而非逗號</p>
+					</section>
+					
+					<section>
+						<h2>for實例</h2>
+						<p class="fragment">for常常拿來做指定次數的迴圈</p>
+						<pre class="fragment" style="width:650px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	for(int i=0;i&lt;5;i++){
+		printf("now i is %d\n",i);
+	}
+}</code></pre>
+					</section>
+					
+					<section>
+						<h2>練習</h2>
+						<p class="fragment">輸入數字指定迴圈的執行次數</p>
+						<p class="fragment">輸入字串使讓迴圈執行時可以列印</p>
 					</section>
 				</section>
 				
