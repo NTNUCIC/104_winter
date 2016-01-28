@@ -1,0 +1,260 @@
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>JS</title>
+
+		<link rel="icon" type="image/x-icon" href="../../images/favicon.ico">
+		<link rel="shortcut icon" type="image/x-icon" href="../../images/favicon.ico">
+
+		<meta name="og:title" content="JS">
+		<meta name="og:url" content="http://ntnucic.github.io/104_winter/slides/20160129-ADV/index.html">
+		<meta name="og:description" content="國立臺灣師範大學資訊研究社寒訓課程投影片">
+		<meta name="og:image" content="../../images/cic.jpg">
+		<meta name="og:site_name" content="NTNUCIC">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/black.css" id="theme">
+
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1 style="margin-top:100px">程式語言基礎</h1>
+						<h4>林品儒</h4>
+						<h4>2016/1/29</h4>
+				</section>
+				
+				<section>
+					<h2>社團介紹</h2>
+					<p class="fragment">NTNUCIC</p>
+					<p class="fragment">台師大資訊研究社</p>
+					<p class="fragment">對資訊相關有興趣的人都來~~</p>
+				</section>
+				
+				<section>
+					<h2>自我介紹</h2>
+					<p class="fragment">林品儒</p>
+					<p class="fragment">www.github.com/aigecko</p>
+					<p class="fragment">師大貓耳控</p>
+					<p class="fragment">喜歡Asm,Ruby和Crystal</p>
+				</section>
+				
+				<section>
+					<section>
+						<h2>指標</h2>
+						<p class="fragment">在C/C++中深奧難懂的神祕名詞</p>
+						<p class="fragment">代表記憶體的位置</p>
+						<p class="fragment">可以取出變數的記憶體位置</p>
+						<p class="fragment">或是從指定位置取出值</p>
+					</section>
+					
+					<section>
+						<h2>指標大小</h2>
+						<p class="fragment">雖然各種型別佔用空間可能不一樣</p>
+						<p class="fragment">但是他們的指標都是一樣大的</p>
+						<p class="fragment">可能是32或64位元視編譯器和系統而定</p>
+					</section>
+					
+					<section>
+						<h2>指標宣告</h2>
+						<p class="fragment">變數名稱前面加上星號*</p>
+						<p class="fragment">這樣"該變數"就會是該型別的指標</p>
+					</section>
+					
+					<section>
+						<h2>取址和取值</h2>
+						<p class="fragment">對變數使用&amp;當前綴的話可以取得其指標</p>
+						<p class="fragment">對指標使用*前綴則可以取得該位址放的值</p>
+						<p class="fragment">注意地址和放的東西不一定一樣</p>
+					</section>
+					
+					<section>
+						<h2>練習</h2>
+						<p class="fragment">地址和放的值不會一樣</p>
+						<p class="fragment">指標可以指派給變數</p>
+						<pre class="fragment" style="width:600px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	int a=0x5566;
+	int *p=&amp;a;
+	printf("%X %X %X %X %X",a,p,*p,&amp;a,*(&amp;a));
+}</code></pre>
+					</section>
+				</section>
+					
+				<section>
+					<section>
+						<h2>陣列</h2>
+						<p class="fragment">要使用陣列需要使用指標進行操作</p>
+						<p class="fragment">宣告陣列要在變數名稱後加上使用[]</p>
+						<p class="fragment">陣列宣告時要指定大小</p>
+						<p class="fragment">可以用{}將其元素初始化</p>
+					</section>
+					
+					<section>
+						<h2>取得型別大小</h2>
+						<p class="fragment">使用sizeof()傳入變數或型別可得知其位元組數</p>
+						<p class="fragment">因為是運算子所以編譯時就知道</p>
+						<p class="fragment">也可以用來看陣列多大</p>
+					</section>
+					
+					<section>
+						<h2>陣列範例</h2>
+						<p class="fragment">可以手動指定大小</p>
+						<p class="fragment">也可以把元素指派好後自動知道大小</p>
+						<pre class="fragment" style="width:600px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	bool arr[4],table[]={true,false,false};
+	char list[5]={'a','b','c','d','e'};
+	printf("%d %d %d",
+		sizeof(arr)/sizeof(bool),
+		sizeof(table)/sizeof(bool),
+		sizeof(list)/sizeof(char));
+	return 0;
+}</code></pre>
+					</section>
+					
+					<section>
+						<h2>陣列與字串</h2>
+						<p class="fragment">字串其實是一種char陣列</p>
+						<p class="fragment">但是字串最後的元素是NULL字元</p>
+						<p class="fragment">把字串裝進變數可使用陣列宣告方式</p>
+						<p class="fragment">char str[]="hello, world"</p>
+					</section>
+					
+					<section>
+						<h2>元素與索引</h2>
+						<p class="fragment">陣列中的放的東西稱為元素</p>
+						<p class="fragment">要取出元素必須要索引代表其位置</p>
+						<p class="fragment">索引值從0開始</p>
+						<p class="fragment">使用[]來取得指定索引的元素</p>
+					</section>
+					
+					<section>
+						<h2>練習</h2>
+						<p class="fragment">觀察字串索引以及元素的變化</p>
+						<p class="fragment">觀察初始化但未指定的陣列</p>
+						<p class="fragment">觀察未初始化的陣列</p>
+						<pre class="fragment" style="width:650px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	char str[]="abcdef";
+	int arr[4]={22,66};
+	short uninit[2];
+	printf("%d %d %d\n",str[0],str[5],str[6]);
+	printf("%d %d %d\n",arr[0],arr[1],arr[2]);
+	printf("%hd %hd",uninit[0],uninit[1]);
+}</code></pre>
+					</section>
+					
+					<section>
+						<h2>陣列與指標</h2>
+						<p class="fragment">陣列的頭可以代表該型態的指標</p>
+						<p class="fragment">對於指標可以進行加減法來移動</p>
+						<p class="fragment">移動的矩離和該型別的大小相關</p>
+					</section>
+					
+					<section>
+						<h2>指標運算</h2>
+						<p class="fragment">加法減法可以使用</p>
+						<p class="fragment">還可以使用&nbsp;++&nbsp;遞增</p>
+						<p class="fragment">以及使用&nbsp;--&nbsp;遞減</p>
+						<p class="fragment">注意！此兩個運算子是地雷請小心使用</p>
+					</section>
+					
+					<section>
+						<h2>地雷範例</h2>
+						<pre class="fragment" style="width:650px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	int n=100,m;
+	m=++n;
+	printf("%d %d\n",n,m);
+	m=n++;
+	printf("%d %d\n",n,m);
+}</code></pre>
+						<p class="fragment">放前面放後面竟然結果會不一樣</p>
+					</section>
+					
+					<section>
+						<h2>再次提醒</h2>
+						<p class="fragment">雖然在此不探討其原理</p>
+						<p class="fragment">但是記得一個指令一個動作</p>
+						<p class="fragment">有遞增遞減就不要指派</p>
+						<p class="fragment"><del>愛護生命遠離debugging</del></p>
+					</section>
+					
+					<section>
+						<h2>指標移動</h2>
+						<p class="fragment">可以用來迭代整個陣列</p>
+						<p class="fragment">記得陣列本身可以轉成該型別指標</p>
+						<pre class="fragment" style="width:550px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
+int main(){
+	int arr[]={100,200,0};
+	int *p=arr; \\注意這裡直接把arr給p
+	printf("%d ",*p);p++;
+	printf("%d ",*p);p++;
+	printf("%d ",*p);p++;
+}</code></pre>
+					</section>
+					
+					<section>
+						<h2>最後</h2>
+						<p class="fragment">今天是資訊研究社寒訓的前半段</p>
+						<p class="fragment">前半段的課程稍微複雜</p>
+						<p class="fragment">希望大家看完直播還是再研究一下投影片</p>
+						<p class="fragment">感謝各位的收看</p>
+						<p class="fragment">課程網址：ntnucic.github.io/104_winter</p>
+					</section>
+				</section>
+				
+			</div>
+		</div>
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '../plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: '../plugin/zoom-js/zoom.js', async: true },
+				{ src: '../plugin/notes/notes.js', async: true }
+			]
+		});
+		</script>
+	</body>
+</html>
