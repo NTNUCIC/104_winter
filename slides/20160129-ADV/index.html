@@ -47,14 +47,14 @@
 						<h4>林品儒</h4>
 						<h4>2016/1/29</h4>
 				</section>
-				
+
 				<section>
 					<h2>社團介紹</h2>
 					<p class="fragment">NTNUCIC</p>
 					<p class="fragment">台師大資訊研究社</p>
 					<p class="fragment">對資訊相關有興趣的人都來~~</p>
 				</section>
-				
+
 				<section>
 					<h2>自我介紹</h2>
 					<p class="fragment">林品儒</p>
@@ -62,7 +62,7 @@
 					<p class="fragment">師大貓耳控</p>
 					<p class="fragment">喜歡Asm,Ruby和Crystal</p>
 				</section>
-				
+
 				<section>
 					<section>
 						<h2>指標</h2>
@@ -71,27 +71,27 @@
 						<p class="fragment">可以取出變數的記憶體位置</p>
 						<p class="fragment">或是從指定位置取出值</p>
 					</section>
-					
+
 					<section>
 						<h2>指標大小</h2>
 						<p class="fragment">雖然各種型別佔用空間可能不一樣</p>
 						<p class="fragment">但是他們的指標都是一樣大的</p>
 						<p class="fragment">可能是32或64位元視編譯器和系統而定</p>
 					</section>
-					
+
 					<section>
 						<h2>指標宣告</h2>
 						<p class="fragment">變數名稱前面加上星號*</p>
 						<p class="fragment">這樣"該變數"就會是該型別的指標</p>
 					</section>
-					
+
 					<section>
 						<h2>取址和取值</h2>
 						<p class="fragment">對變數使用&amp;當前綴的話可以取得其指標</p>
 						<p class="fragment">對指標使用*前綴則可以取得該位址放的值</p>
 						<p class="fragment">注意地址和放的東西不一定一樣</p>
 					</section>
-					
+
 					<section>
 						<h2>空指標</h2>
 						<p class="fragment">指標的值為0(NULL)則為空指標</p>
@@ -99,7 +99,7 @@
 						<p class="fragment">指標初始化時儘量初始化為空指標</p>
 						<p class="fragment"><del>不是不爆&nbsp;時候未到</del></p>
 					</section>
-					
+
 					<section>
 						<h2>練習</h2>
 						<p class="fragment">地址和放的值不會一樣</p>
@@ -111,7 +111,7 @@ int main(){
 	printf("%X %X %X %X %X",a,p,*p,&amp;a,*(&amp;a));
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>使用指標</h2>
 						<p class="fragment">取得指標後可以對該位置的值進行存取</p>
@@ -124,7 +124,7 @@ int main(){
 	printf("%X %X %X %X %X",a,p,*p,&amp;a,*(&amp;a));
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>練習</h2>
 						<p class="fragment">既然可以使用指標存取值</p>
@@ -132,7 +132,7 @@ int main(){
 						<p class="fragment">提示:宣告變數a,b並宣告指標p,q指派a,b的位址</p>
 					</section>
 				</section>
-					
+
 				<section>
 					<section>
 						<h2>陣列</h2>
@@ -141,7 +141,7 @@ int main(){
 						<p class="fragment">陣列宣告時要指定大小</p>
 						<p class="fragment">可以用{}將其元素初始化</p>
 					</section>
-					
+
 					<section>
 						<h2>陣列範例</h2>
 						<p class="fragment">可以手動指定大小</p>
@@ -157,7 +157,7 @@ int main(){
 	return 0;
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>陣列與字串</h2>
 						<p class="fragment">字串其實是一種char陣列</p>
@@ -165,7 +165,7 @@ int main(){
 						<p class="fragment">把字串裝進變數可使用陣列宣告方式</p>
 						<p class="fragment">char str[]="hello, world"</p>
 					</section>
-					
+
 					<section>
 						<h2>元素與索引</h2>
 						<p class="fragment">陣列中的放的東西稱為元素</p>
@@ -173,7 +173,7 @@ int main(){
 						<p class="fragment">索引值從0開始</p>
 						<p class="fragment">使用[]來取得指定索引的元素</p>
 					</section>
-					
+
 					<section>
 						<h2>練習</h2>
 						<p class="fragment">觀察字串索引以及元素的變化</p>
@@ -189,14 +189,14 @@ int main(){
 	printf("%hd %hd",uninit[0],uninit[1]);
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>陣列與指標</h2>
 						<p class="fragment">陣列的頭可以代表該型態的指標</p>
 						<p class="fragment">對於指標可以進行加減法來移動</p>
 						<p class="fragment">移動的矩離和該型別的大小相關</p>
 					</section>
-					
+
 					<section>
 						<h2>指標運算</h2>
 						<p class="fragment">加法減法可以使用</p>
@@ -204,7 +204,7 @@ int main(){
 						<p class="fragment">以及使用&nbsp;--&nbsp;遞減</p>
 						<p class="fragment">注意！此兩個運算子是地雷請小心使用</p>
 					</section>
-					
+
 					<section>
 						<h2>指標移動</h2>
 						<p class="fragment">可以用來迭代整個陣列</p>
@@ -218,7 +218,7 @@ int main(){
 	printf("%d ",*p);p++;
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>陣列取值</h2>
 						<p class="fragment">使用指標取出指定索引的值</p>
@@ -232,7 +232,7 @@ int main(){
 }</code></pre>
 						<p class="fragment">其實中括號就是幫我們精減語法</p>
 					</section>
-					
+
 					<section>
 						<h2>練習</h2>
 						<p class="fragment">陣列也可以裝指標</p>
@@ -243,14 +243,14 @@ int main(){
 	"northwood"
 };</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>常數</h2>
 						<p class="fragment">使用const關鍵字前綴代表常數</p>
 						<p class="fragment">常數不可以被更改</p>
 						<p class="fragment">但是有指標時就要小心了</p>
 					</section>
-					
+
 					<section>
 						<h2>常數的指標vs指標的常數</h2>
 						<pre class="fragment" style="width:550px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
@@ -261,7 +261,7 @@ int main(){
 	const int * const r=&amp;a; //都不能改
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>辨識方法</h2>
 						<p class="fragment">看看const在&nbsp;*&nbsp;的哪一邊</p>
@@ -269,7 +269,7 @@ int main(){
 						<p class="fragment">放後面就是指標的常數</p>
 						<p class="fragment">兩個都有就是常數的指標常數</p>
 					</section>
-					
+
 					<section>
 						<h2>練習</h2>
 						<p class="fragment">補上p和q的宣告讓輸出為8008&nbsp;8008</p>
@@ -282,7 +282,7 @@ int main(){
 	printf("%d %d",*p,a);
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>格式化輸入</h2>
 						<p class="fragment">為什麼輸出很早就講了而沒有講輸入</p>
@@ -290,7 +290,7 @@ int main(){
 						<p class="fragment">scanf可傳入格式以及多個指標</p>
 						<p class="fragment">將輸入的值以指定格式取代指標指的值</p>
 					</section>
-					
+
 					<section>
 						<h2>格式化字串</h2>
 						<p class="fragment">其他的格式相同,只有以下不同</p>
@@ -299,7 +299,7 @@ int main(){
 						<p class="fragment">"%s"對應字串(記得字串空間要夠大)</p>
 						<p class="fragment">要知道佔用的記憶體有多大才能放好放滿</p>
 					</section>
-					
+
 					<section>
 						<h2>練習</h2>
 						<p class="fragment">語法參考&nbsp;scanf("%d",&amp;n);</p>
@@ -307,14 +307,14 @@ int main(){
 						<p class="fragment">unsigned&nbsp;int,long&nbsp;long&nbsp;int,float及double</p>
 					</section>
 				</section>
-				
+
 				<section>
 					<section>
 						<h2>比較運算</h2>
 						<p class="fragment">在講解分支指令前需要先知道比較運算</p>
 						<p class="fragment">對兩個運算元比較之後得出其真假值</p>
 					</section>
-					
+
 					<section>
 						<h2>數值比較</h2>
 						<p class="fragment">大於&nbsp;&gt;&nbsp;大於等於&nbsp;&gt;=</p>
@@ -322,7 +322,7 @@ int main(){
 						<p class="fragment">相等&nbsp;==&nbsp;不相等&nbsp;!=</p>
 						<p class="fragment">要注意的是相等的等號有2個而非1個</p>
 					</section>
-					
+
 					<section>
 						<h2>字串比較</h2>
 						<p class="fragment">由於字串其實是指標</p>
@@ -330,7 +330,7 @@ int main(){
 						<p class="fragment">因此直接比較指標沒有意義</p>
 						<p class="fragment">要比較兩方指標所指的值有無相同</p>
 					</section>
-					
+
 					<section>
 						<h2>字串比較</h2>
 						<p class="fragment">#include&nbsp;&lt;string.h&gt;</p>
@@ -339,7 +339,7 @@ int main(){
 						<p class="fragment">前字串小於後字串回傳負值</p>
 						<p class="fragment">前字串大於後字串回傳正值</p>
 					</section>
-					
+
 					<section>
 						<h2>練習</h2>
 						<p class="fragment">列印以下字串的比較結果</p>
@@ -348,7 +348,7 @@ int main(){
 						<p class="fragment">"MX440","R4850"</p>
 					</section>
 				</section>
-				
+
 				<section>
 					<section>
 						<h2>分支指令</h2>
@@ -356,7 +356,7 @@ int main(){
 						<p class="fragment">所以才需要講解比較運算</p>
 						<p class="fragment">不同語言的分支指令語法可能略有出入</p>
 					</section>
-					
+
 					<section>
 						<h2>if</h2>
 						<p class="fragment">最簡單的分支指令</p>
@@ -364,7 +364,7 @@ int main(){
 						<p class="fragment">此處的右大括號後方是不需要分號的</p>
 						<p class="fragment">用在只有某種情況才要執行的時候</p>
 					</section>
-					
+
 					<section>
 						<h2>if實例</h2>
 						<p class="fragment"></p>
@@ -375,7 +375,7 @@ int main(){
 	}
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>if-else</h2>
 						<p class="fragment">二分法的分支指令</p>
@@ -384,7 +384,7 @@ int main(){
 						<p class="fragment">條件符合就往if去,不合則往else去</p>
 						<p class="fragment">用在不同狀況有不同處理</p>
 					</section>
-					
+
 					<section>
 						<h2>if-else實例</h2>
 						<pre class="fragment" style="width:550px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
@@ -397,7 +397,7 @@ int main(){
 	}
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>if-else&nbsp;if-else</h2>
 						<p class="fragment">多個條件的判斷</p>
@@ -405,7 +405,7 @@ int main(){
 						<p class="fragment">else if(條件){某些內容}</p>
 						<p class="fragment">else{不然就執行這裡}</p>
 					</section>
-					
+
 					<section>
 						<h2>if-else&nbsp;if-else實例</h2>
 						<pre class="fragment" style="width:650px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
@@ -418,14 +418,14 @@ int main(){
 	else{printf("Out of range");}
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>switch-case</h2>
 						<p class="fragment">上面講的都是不同的判斷是來做分支</p>
 						<p class="fragment">使用switch-case可以只對某變數的值做比較</p>
 						<p class="fragment">因為語法很難描述就直接看實例吧</p>
 					</section>
-					
+
 					<section>
 						<h2>switch-case實例</h2>
 						<pre class="fragment" style="width:650px"><code style="font-family:'consolas','ubuntu mono';font-size:24px;" class="cpp">#include &lt;stdio.h&gt;
@@ -447,7 +447,7 @@ int main(){
 	}
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>練習</h2>
 						<p class="fragment">依照隨機的骰子列印不同的字串</p>
@@ -465,7 +465,7 @@ int main(){
 }</code></pre>
 					</section>
 				</section>
-				
+
 				<section>
 					<section>
 						<h2>迴圈</h2>
@@ -473,7 +473,7 @@ int main(){
 						<p class="fragment">可以在特定狀況下重複執行程式碼</p>
 						<p class="fragment">有各種不同功能的指令</p>
 					</section>
-					
+
 					<section>
 						<h2>while</h2>
 						<p class="fragment">最簡單的迴圈</p>
@@ -481,7 +481,7 @@ int main(){
 						<p class="fragment">當條件符合時會執行大括號內的指令</p>
 						<p class="fragment">執行完會再判斷是否符合條件</p>
 					</section>
-					
+
 					<section>
 						<h2>無限迴圈</h2>
 						<p class="fragment">會一直執行而不會停止</p>
@@ -494,14 +494,14 @@ int main(){
 }</code></pre>
 						<p class="fragment">可以使用ctrl+c停止程式</p>
 					</section>
-					
+
 					<section>
 						<h2>練習</h2>
 						<p class="fragment">取得輸入整數取log2的整數部份</p>
 						<p class="fragment">提示:使用除法將輸入的數每次除以2</p>
 						<p class="fragment">提示:記得宣告另外的變數來遞增</p>
 					</section>
-					
+
 					<section>
 						<h2>for</h2>
 						<p class="fragment">進階版的迴圈但是更常用</p>
@@ -511,7 +511,7 @@ int main(){
 						<p class="fragment">在內容結束時執行的部份遞增變數</p>
 						<p class="fragment">要注意是2個分號而非逗號</p>
 					</section>
-					
+
 					<section>
 						<h2>for實例</h2>
 						<p class="fragment">for常常拿來做指定次數的迴圈</p>
@@ -522,13 +522,13 @@ int main(){
 	}
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>練習</h2>
 						<p class="fragment">輸入數字指定迴圈的執行次數</p>
 						<p class="fragment">輸入字串使讓迴圈執行時可以列印</p>
 					</section>
-					
+
 					<section>
 						<h2>陣列迭代</h2>
 						<p class="fragment">使用for迴圈操作陣列的每個元素</p>
@@ -540,21 +540,21 @@ int main(){
 	}
 }</code></pre>
 					</section>
-					
+
 					<section>
 						<h2>練習</h2>
 						<p class="fragment">宣告有8個元素的整數陣列</p>
 						<p class="fragment">把陣列中的每個元素變成其索引的平方數</p>
 					</section>
 				</section>
-				
+
 				<section>
 					<section>
 						<h2>邏輯運算子</h2>
 						<p class="fragment">此運算子可以補足分支指令的不足</p>
 						<p class="fragment">可以同時判斷多個條件</p>
 					</section>
-					
+
 					<section>
 						<h2>AND</h2>
 						<p class="fragment">使用&nbsp;&amp;&amp;&nbsp;或and將兩個值取AND</p>
@@ -563,7 +563,7 @@ int main(){
 						<p class="fragment">兩個值為true才為true</p>
 						<p class="fragment">否則為false</p>
 					</section>
-					
+
 					<section>
 						<h2>OR</h2>
 						<p class="fragment">使用&nbsp;||&nbsp;或or將兩個值取OR</p>
@@ -571,14 +571,14 @@ int main(){
 						<p class="fragment">兩個值任一為true就為true</p>
 						<p class="fragment">其他就是false</p>
 					</section>
-					
+
 					<section>
 						<h2>XOR</h2>
 						<p class="fragment">可以用&nbsp;^&nbsp;或xor將兩個值取XOR</p>
 						<p class="fragment">兩值相同則為false</p>
 						<p class="fragment">兩值不同則為true</p>
 					</section>
-					
+
 					<section>
 						<h2>NOT</h2>
 						<p class="fragment">其實NOT應該歸類於邏輯運算子</p>
@@ -587,7 +587,7 @@ int main(){
 						<p class="fragment">true變成false</p>
 					</section>
 				</section>
-				
+
 				<section>
 					<h2>最後</h2>
 					<p class="fragment">這次是台師大資訊研究社第一次舉辦寒訓</p>
